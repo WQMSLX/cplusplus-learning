@@ -1,8 +1,9 @@
 cmake_minimum_required(VERSION 3.20)
-project(
-    engine
-    LANGUAGES CXX C
-    VERSION 0.1.0
-)
-add_executable(main src/main.cpp)
-target_include_directories(main PRIVATE include)
+
+project(cplusplus)
+add_executable(oatpp-test src/main.cpp)
+set(CMAKE_CXX_STANDARD 11)
+
+find_package(oatpp CONFIG REQUIRED)
+
+target_link_libraries(oatpp-test PRIVATE oatpp::oatpp oatpp::oatpp-test)

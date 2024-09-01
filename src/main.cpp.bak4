@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+
+int main()
+{
+        char str1[5] = {'h', 'e', 'l', 'l', 'o'};
+        char str2[6] = {'r', 'e', 'l', 'l', 'o','\0'};
+       
+        std::cout << "str1=" << str1 << std::endl;
+        std::cout << "str2=" << str2 << std::endl;
+
+        std::string str;
+        std::cin >> str;
+        std::cout << "str=" << str << std::endl;
+        std::cin.get();
+        std::cin >> str;
+        std::cout << "str=" << 'A' << std::endl;
+        std::cin.get();
+        return 0;
+}

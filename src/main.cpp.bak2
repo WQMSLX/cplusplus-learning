@@ -1,0 +1,25 @@
+/***
+ * @Author: WangQiming 1358632259@qq.com
+ * @Date: 2024-08-21 22:09:22
+ * @LastEditors: WangQiming 1358632259@qq.com
+ * @LastEditTime: 2024-08-21 22:09:26
+ * @FilePath: /cplusplus/src/main.cpp
+ * @Description: 初始化列表
+ * @Copyright (c) 2024 by 1358632259@qq.com, All Rights Reserved.
+ */
+
+#include <iostream>
+#include <vector>
+#include "cgmath.hpp"
+#include "engine.hpp"
+#include "foo.hpp"
+int main()
+{
+    int arr[3] = {1, 2, 3};
+    Foo foo(1, 2);
+    std::vector vec = {1, 23, 4, 5, 6};
+    std::cout << "arr[0]:" << arr[0] << std::endl;
+    std::cout<<"foo:"<<foo.value_a<<","<<foo.value_b<<std::endl;
+    return 0;
+}
+

@@ -1,0 +1,47 @@
+/***
+ * @Author: WangQiming 1358632259@qq.com
+ * @Date: 2024-08-21 23:25:02
+ * @LastEditors: WangQiming 1358632259@qq.com
+ * @LastEditTime: 2024-08-21 23:25:02
+ * @FilePath: /cplusplus/src/main.cpp
+ * @Description: auto类型推导通常用来简化冗长的类型写法
+ * @Copyright (c) 2024 by 1358632259@qq.com, All Rights Reserved.
+ */
+#include <iostream>
+#include <tuple>
+
+std::tuple<int, double, std::string> f()
+{
+    return std::make_tuple(1, 2.3, "456");
+}
+auto add14 = [](auto x, auto y) -> int
+{
+    std::cout << x + y << std::endl;
+    return 1;
+};
+
+auto add15(auto x,auto y){
+    return x + y;
+}
+
+//C++11 模板写法
+template<typename T,typename U>
+auto add2(T x,U y)->decltype(x+y){
+    return x + y;
+}
+int main(int argc, char const *argv[])
+{
+    auto [x, y, z] = f();
+    std::cout << x << "," << y << "," << z << std ::endl;
+
+    auto i = 11;
+    auto j = 12;
+    add14(11, 12);
+    std::cout << "x+y=" << add15(1,111)<<std::endl;
+    //类型推断
+    if(std::is_same<decltype(x),int>::value){
+        std::cout << "the type is int" << std::endl;
+    }
+    std::cout << "add2 x+y=" << add2(1, 111) << std::endl;
+    return 0;
+}
